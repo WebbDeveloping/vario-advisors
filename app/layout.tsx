@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${baskerville.variable} ${poppins.variable} antialiased`}>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={`${baskerville.variable} ${poppins.variable} antialiased overflow-x-hidden`}>
         <Header />
         {children}
         <Footer />

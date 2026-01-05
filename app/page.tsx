@@ -8,7 +8,7 @@ import CTABanner from "@/components/home/CTABanner";
 
 export default function Home() {
   return (
-    <div className="bg-surface">
+    <div className="bg-surface overflow-x-hidden">
       <Hero />
 
       {/* The Vario Difference Section */}

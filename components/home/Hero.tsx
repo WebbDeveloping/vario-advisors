@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-8 h-[65vh] flex items-center">
+    <div className="relative isolate px-6 pt-14 lg:px-8 h-[65vh] flex items-center overflow-x-hidden">
       {/* Background Image */}
       {/* 
         OPTION 1 (CURRENT): Subtle farmland/agricultural landscape
@@ -86,20 +86,20 @@ export default function Hero() {
             stability, real assets, and smarter diversification.
           </motion.p>
           <motion.div
-            className="mt-8 flex items-center justify-center gap-x-6"
+            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <Link
               href="/contact"
-              className="rounded-md bg-[#005EB8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8] transition-colors"
+              className="rounded-md bg-[#005EB8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8] transition-colors text-center whitespace-nowrap"
             >
               Book Your Retirement Income Plan
             </Link>
             <Link
               href="/accredited-investor"
-              className="text-sm/6 font-semibold text-white hover:text-[#BDDEFD] transition-colors"
+              className="text-sm/6 font-semibold text-white hover:text-[#BDDEFD] transition-colors text-center"
             >
               Check Your Accredited Status <span aria-hidden="true">→</span>
             </Link>

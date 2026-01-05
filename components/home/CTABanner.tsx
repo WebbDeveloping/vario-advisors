@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function CTABanner() {
   return (
-    <div className="bg-[#BDDEFD]">
+    <div className="bg-[#BDDEFD] overflow-x-hidden">
       <div className="px-6 py-24 sm:py-32 lg:px-8">
         <motion.div
           className="mx-auto max-w-2xl text-center"

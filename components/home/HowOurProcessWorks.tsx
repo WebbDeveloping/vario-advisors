@@ -44,7 +44,7 @@ const stepVariants = {
 
 export default function HowOurProcessWorks() {
   return (
-    <div className="bg-[#BDDEFD] py-24 sm:py-32">
+    <div className="bg-[#BDDEFD] py-24 sm:py-32 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
           {/* Left Column: Title, Description, and CTA */}

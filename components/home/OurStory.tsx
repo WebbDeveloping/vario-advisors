@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function OurStory() {
   return (
-    <div className="relative bg-[#BDDEFD]">
+    <div className="relative bg-[#BDDEFD] overflow-x-hidden">
       <div className="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
         {/* Image Section - Left Side */}
         <motion.div
@@ -15,7 +15,7 @@ export default function OurStory() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
+          <div className="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0 overflow-hidden">
             <img
               alt="Retirement planning and real assets"
               src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
