@@ -1,0 +1,27 @@
+Font Usage
+
+Following Are Font Usage In Documentation.
+
+HEADER
+
+Use uppercase capitalisation whenever possible.
+
+Make text left - aligned whenever possible.
+
+The recommended size is 16.
+
+SUB-HEADERS
+
+Use uppercase capitalisation.
+
+Make text left - aligned whenever possible.
+
+The recommended size is 12.
+
+BODY TEXT
+
+Use sentence case.
+
+Make text left - aligned whenever possible.
+
+The recommended size is 10.
