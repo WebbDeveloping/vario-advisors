@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Resources", href: "/resources" },

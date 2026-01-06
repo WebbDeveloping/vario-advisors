@@ -1,12 +1,17 @@
+import ResourcesHero from "@/components/resources/ResourcesHero";
+import GuidesSection from "@/components/resources/GuidesSection";
+import VideosSection from "@/components/resources/VideosSection";
+import ArticlesSection from "@/components/resources/ArticlesSection";
+import ResourcesCTA from "@/components/resources/ResourcesCTA";
+
 export default function Resources() {
   return (
-    <main className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-dark-navy mb-4">Resources</h1>
-        <p className="text-lg text-gray-700">
-          Resources page content coming soon...
-        </p>
-      </div>
+    <main className="min-h-screen bg-surface overflow-x-hidden">
+      <ResourcesHero />
+      <GuidesSection />
+      <VideosSection />
+      <ArticlesSection />
+      <ResourcesCTA />
     </main>
   );
 }

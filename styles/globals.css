@@ -32,11 +32,29 @@
 
 html {
   overflow-x: hidden;
+  /* Enable smooth scrolling without blocking */
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-poppins);
   overflow-x: hidden;
+}
+
+/* Performance optimizations for Framer Motion animations */
+/* Framer Motion uses transform and opacity which are GPU-accelerated by default */
+/* These optimizations help ensure smooth scrolling during animations */
+* {
+  /* Optimize rendering performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure motion components don't block scrolling */
+[data-framer-component] {
+  /* Use GPU acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 h1,

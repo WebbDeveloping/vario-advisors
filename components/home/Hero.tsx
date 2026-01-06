@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-8 h-[65vh] flex items-center overflow-x-hidden">
+    <div className="relative isolate px-6 pt-20 pb-12 sm:pt-14 sm:pb-16 lg:px-8 lg:h-[65vh] lg:flex lg:items-center overflow-x-hidden min-h-[400px] sm:min-h-[500px]">
       {/* Background Image */}
       {/* 
         OPTION 1 (CURRENT): Subtle farmland/agricultural landscape

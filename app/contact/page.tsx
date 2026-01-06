@@ -5,20 +5,20 @@ export default function Contact() {
         <img
           alt=""
           src="/images/vario-services-hero/1.png"
-          className="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full"
+          className="h-48 w-full bg-gray-50 object-cover sm:h-64 lg:h-80 lg:absolute lg:h-full"
         />
       </div>
-      <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
+      <div className="pt-12 pb-16 sm:pt-16 sm:pb-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32 lg:pb-32">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl">
               Let's Build Your Retirement Plan Together
             </h2>
-            <p className="mt-2 text-lg/8 text-gray-600">
+            <p className="mt-3 text-base text-gray-600 sm:mt-2 sm:text-lg/8">
               Get started with a personalized retirement income strategy that combines traditional planning with alternative investments. Schedule a consultation to discover how we can help you build a retirement that doesn't depend on the stock market.
             </p>
-            <form action="#" method="POST" className="mt-16">
-              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <form action="#" method="POST" className="mt-10 sm:mt-16">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2 sm:gap-y-6">
                 <div>
                   <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
                     First name
@@ -162,10 +162,10 @@ export default function Contact() {
                   </div>
                 </fieldset>
               </div>
-              <div className="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
+              <div className="mt-8 flex justify-end border-t border-gray-900/10 pt-6 sm:mt-10 sm:pt-8">
                 <button
                   type="submit"
-                  className="rounded-md bg-[#005EB8] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8]"
+                  className="w-full rounded-md bg-[#005EB8] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8] transition-colors sm:w-auto"
                 >
                   Send message
                 </button>

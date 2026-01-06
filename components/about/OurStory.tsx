@@ -24,7 +24,7 @@ export default function OurStory() {
         </motion.div>
 
         {/* Content Section - Right Side */}
-        <div className="px-6 lg:contents">
+        <div className="px-6 pb-16 pt-12 sm:pb-20 sm:pt-16 lg:contents lg:pb-0 lg:pt-0">
           <motion.div
             className="mx-auto max-w-2xl lg:mr-0 lg:ml-8 lg:w-full lg:max-w-lg lg:flex-none xl:w-1/2"
             initial={{ opacity: 0, x: 50 }}
@@ -52,7 +52,7 @@ export default function OurStory() {
             </motion.h2>
             
             <motion.div
-              className="mt-6 sm:mt-8 space-y-5 text-base leading-7 text-[#011E35] lg:max-w-none"
+              className="mt-6 sm:mt-8 space-y-4 text-sm leading-6 text-[#011E35] sm:space-y-5 sm:text-base sm:leading-7 lg:max-w-none"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -82,19 +82,19 @@ export default function OurStory() {
               <p>
                 These two outcomes shaped my life and my philosophy.
               </p>
-              <p className="text-lg font-semibold text-[#011E35] leading-8">
+              <p className="text-base font-semibold text-[#011E35] leading-7 sm:text-lg sm:leading-8">
                 Real assets matter.
               </p>
-              <p className="text-lg font-semibold text-[#011E35] leading-8">
+              <p className="text-base font-semibold text-[#011E35] leading-7 sm:text-lg sm:leading-8">
                 Predictability matters.
               </p>
-              <p className="text-lg font-semibold text-[#011E35] leading-8">
+              <p className="text-base font-semibold text-[#011E35] leading-7 sm:text-lg sm:leading-8">
                 Retirees deserve better.
               </p>
               <p>
                 Vario Advisors was created with a mission:
               </p>
-              <p className="text-lg font-medium text-[#011E35] leading-8">
+              <p className="text-base font-medium text-[#011E35] leading-7 sm:text-lg sm:leading-8">
                 to help families build retirements that aren't dependent on the stock market.
               </p>
             </motion.div>

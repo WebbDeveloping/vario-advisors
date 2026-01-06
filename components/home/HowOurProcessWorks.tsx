@@ -88,7 +88,7 @@ export default function HowOurProcessWorks() {
                   <div className="flex flex-col">
                     <div className="relative">
                       <motion.div
-                        className="text-5xl font-bold text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+                        className="text-5xl font-medium text-[#005EB8]/40 sm:text-6xl lg:text-7xl xl:text-8xl"
                         initial={{ opacity: 0, scale: 0.5 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
