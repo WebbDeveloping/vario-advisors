@@ -48,13 +48,49 @@ vario-advisors/
 - **Colors**: Dark Navy (#011E35), Blue (#005EB8), Light Blue (#BDDEFD)
 - **Fonts**: Baskerville (primary), Poppins (secondary)
 - **Typography**: See STYLE-GUIDELINES.md for detailed typography rules
+- **Components**: See STYLE-GUIDELINES.md for component usage guidelines
+
+## Component Library
+
+This project uses [shadcn/ui](https://ui.shadcn.com/) components built on [Radix UI](https://www.radix-ui.com/) primitives and styled with Tailwind CSS.
+
+### Why shadcn/ui + Radix UI?
+
+- **Predictable styling**: All components use Tailwind CSS classes, making it easy for AI tools to generate consistent code
+- **Accessibility**: Radix UI primitives provide WCAG-compliant accessible components out of the box
+- **Customizable**: Components are copied into your codebase, so you own and can modify the code
+- **Modern stack**: Industry-standard combination for React applications
+
+### Adding Components
+
+To add a new shadcn/ui component:
+
+```bash
+npx shadcn@latest add [component-name]
+```
+
+Components are installed in `components/ui/` and become part of your codebase.
+
+### Using Components
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
+// Use with Tailwind classes
+<Button className="bg-brand hover:bg-brand-dark">Click me</Button>
+```
+
+For detailed component usage guidelines, color tokens, and best practices, see [STYLE-GUIDELINES.md](./STYLE-GUIDELINES.md).
 
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (built on Radix UI primitives)
 - **Forms**: React Hook Form + Zod validation
+- **Icons**: Heroicons
 - **Fonts**: Google Fonts (Baskervville, Poppins)
 
 ## Development
@@ -63,5 +99,3 @@ vario-advisors/
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-
-# vario-advisors

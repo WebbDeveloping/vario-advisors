@@ -1,13 +1,18 @@
+import Mission from "@/components/about/Mission";
+import OurStory from "@/components/about/OurStory";
+import OurPhilosophy from "@/components/about/OurPhilosophy";
+import MeetTheTeam from "@/components/about/MeetTheTeam";
+import AboutCTABanner from "@/components/about/AboutCTABanner";
+
 export default function About() {
   return (
-    <main className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-dark-navy mb-4">About</h1>
-        <p className="text-lg text-gray-700">
-          About page content coming soon...
-        </p>
-      </div>
-    </main>
+    <div className="overflow-x-hidden">
+      <Mission />
+      <OurStory />
+      <OurPhilosophy />
+      <MeetTheTeam />
+      <AboutCTABanner />
+    </div>
   );
 }
 

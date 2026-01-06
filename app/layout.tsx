@@ -6,7 +6,8 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Vario Advisors - Retire With Confidence. Plan With Alternatives.",
-  description: "We help retirees unlock a modern retirement strategy built on stability, real assets, and smarter diversification.",
+  description:
+    "We help retirees unlock a modern retirement strategy built on stability, real assets, and smarter diversification.",
 };
 
 export default function RootLayout({
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body className={`${baskerville.variable} ${poppins.variable} antialiased overflow-x-hidden`}>
+      <body
+        className={`${baskerville.variable} ${poppins.variable} antialiased overflow-x-hidden`}
+      >
         <Header />
         {children}
         <Footer />
@@ -24,4 +27,3 @@ export default function RootLayout({
     </html>
   );
 }
-

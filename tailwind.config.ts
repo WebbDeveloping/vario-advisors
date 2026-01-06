@@ -1,65 +1,112 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        // Brand colors from style guidelines
-        "dark-navy": "#011E35",
-        "blue": "#005EB8",
-        "light-blue": "#BDDEFD",
-        
-        // Semantic brand color tokens
-        brand: {
-          DEFAULT: "#005EB8", // Primary brand blue
-          dark: "#004A94", // Darker blue for hover states (approximately 20% darker)
-          soft: "#BDDEFD", // Light blue for gradients and soft backgrounds
-          on: "#FFFFFF", // White text/items on brand background
-          "on-soft": "#F0F8FF", // Very light blue for soft brand backgrounds
-        },
-        
-        // Surface colors (backgrounds)
-        surface: {
-          DEFAULT: "#FFFFFF", // White surface
-          warm: "#FAFAFA", // Slightly warm white
-        },
-        
-        // Text colors
-        text: {
-          DEFAULT: "#011E35", // Dark navy for primary text
-          muted: "#6B7280", // Muted gray for secondary text
-        },
-        
-        // Background colors
-        bg: {
-          DEFAULT: "#FFFFFF", // White background
-        },
-        
-        // Border colors
-        border: {
-          DEFAULT: "#E5E7EB", // Light gray border
-          card: "#F3F4F6", // Lighter border for cards
-          strong: "#D1D5DB", // Stronger border
-        },
-        
-        // Chip/badge colors
-        "chip-blue": "#E0F2FE", // Light blue for chips/badges
-        "chip-blue0": "#BAE6FD", // Slightly darker chip blue
-        
-        // Section colors
-        "section-blue": "#E0F2FE", // Section background blue
-        "section-warm": "#FAFAFA", // Warm section background
-      },
-      fontFamily: {
-        baskerville: ["var(--font-baskerville)", "serif"],
-        poppins: ["var(--font-poppins)", "sans-serif"],
-      },
-    },
+  	extend: {
+  		colors: {
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			'dark-navy': '#011E35',
+  			'blue': '#005EB8',
+  			'light-blue': '#BDDEFD',
+  			brand: {
+  				DEFAULT: '#005EB8',
+  				dark: '#004A94',
+  				soft: '#BDDEFD',
+  				on: '#FFFFFF',
+  				'on-soft': '#F0F8FF'
+  			},
+  			surface: {
+  				DEFAULT: '#FFFFFF',
+  				warm: '#FAFAFA'
+  			},
+  			text: {
+  				DEFAULT: '#011E35',
+  				muted: '#6B7280'
+  			},
+  			bg: {
+  				DEFAULT: '#FFFFFF'
+  			},
+  			'border-custom': {
+  				DEFAULT: '#E5E7EB',
+  				card: '#F3F4F6',
+  				strong: '#D1D5DB'
+  			},
+  			'chip-blue': '#E0F2FE',
+  			'chip-blue0': '#BAE6FD',
+  			'section-blue': '#E0F2FE',
+  			'section-warm': '#FAFAFA'
+  		},
+  		fontFamily: {
+  			baskerville: [
+  				'var(--font-baskerville)',
+  				'serif'
+  			],
+  			poppins: [
+  				'var(--font-poppins)',
+  				'sans-serif'
+  			]
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
   },
   plugins: [],
 };
