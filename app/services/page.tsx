@@ -1,6 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  ArrowTrendingDownIcon,
+  ClockIcon,
+  IdentificationIcon,
+  CurrencyDollarIcon,
+  DocumentTextIcon,
+  CalculatorIcon,
+} from "@heroicons/react/24/outline";
 
 const stats = [
   { label: "Retirement plans created", value: "44 million" },
@@ -14,31 +22,37 @@ const values = [
     name: "Income waterfall design",
     description:
       "We structure your retirement income to flow from the most tax-efficient sources first, ensuring your savings last longer while maintaining your desired lifestyle throughout retirement.",
+    icon: ArrowTrendingDownIcon,
   },
   {
     name: "Longevity planning",
     description:
       "With people living longer than ever, we help you plan for a retirement that could span 30+ years. Our strategies account for extended lifespans and ensure your income never runs out.",
+    icon: ClockIcon,
   },
   {
     name: "Social Security optimization",
     description:
       "Timing matters. We help you determine the optimal age to claim Social Security benefits, potentially increasing your lifetime benefits by tens of thousands of dollars.",
+    icon: IdentificationIcon,
   },
   {
     name: "Inflation protection",
     description:
       "Inflation erodes purchasing power over time. We incorporate strategies and asset classes designed to help your retirement income keep pace with rising costs of living.",
+    icon: CurrencyDollarIcon,
   },
   {
     name: "Required distribution planning",
     description:
       "Required Minimum Distributions (RMDs) can create tax challenges. We help you plan ahead to minimize the tax impact while meeting all legal requirements.",
+    icon: DocumentTextIcon,
   },
   {
     name: "Tax-focused withdrawal strategies",
     description:
       "The order in which you withdraw from different accounts can significantly impact your tax burden. We coordinate with your tax professional to optimize your after-tax retirement income.",
+    icon: CalculatorIcon,
   },
 ];
 const investmentStrategies = [
@@ -291,8 +305,19 @@ export default function ServicePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col"
               >
                 <dt className="text-base font-semibold text-gray-900 sm:text-lg">
+                  <motion.div
+                    className="mb-6 flex size-10 items-center justify-center rounded-lg bg-[#005EB8]"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <value.icon
+                      aria-hidden="true"
+                      className="size-6 text-white"
+                    />
+                  </motion.div>
                   {value.name}
                 </dt>
                 <dd className="mt-2 text-sm text-gray-600 sm:mt-1 sm:text-base">
