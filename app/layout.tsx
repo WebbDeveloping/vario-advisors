@@ -21,7 +21,7 @@ export default function RootLayout({
         className={`${baskerville.variable} ${poppins.variable} antialiased overflow-x-hidden`}
       >
         <Header />
-        {children}
+        <main className="pt-20 lg:pt-24">{children}</main>
         <Footer />
       </body>
     </html>

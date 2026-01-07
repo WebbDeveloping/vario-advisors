@@ -30,14 +30,12 @@ const principles = [
   },
   {
     name: "Education Over Sales",
-    description:
-      "Our role is to teach, guide, and empower — never pressure.",
+    description: "Our role is to teach, guide, and empower — never pressure.",
     icon: AcademicCapIcon,
   },
   {
     name: "Long-Term Partnership",
-    description:
-      "We aim to be your advisory team for life.",
+    description: "We aim to be your advisory team for life.",
     icon: HeartIcon,
   },
 ];
@@ -119,4 +117,3 @@ export default function OurPhilosophy() {
     </div>
   );
 }
-

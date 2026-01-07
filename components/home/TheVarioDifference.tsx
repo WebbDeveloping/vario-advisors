@@ -52,7 +52,7 @@ const itemVariants = {
 
 export default function TheVarioDifference() {
   return (
-    <div className="bg-surface py-24 sm:py-32 overflow-x-hidden">
+    <div className="relative bg-surface pt-24 pb-40 sm:pt-32 sm:pb-48 lg:pb-56 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-2xl"
@@ -99,6 +99,15 @@ export default function TheVarioDifference() {
             ))}
           </div>
         </motion.div>
+      </div>
+      {/* Transition image at bottom - white to dark blue */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-32 sm:h-40 lg:h-48 pointer-events-none">
+        <img
+          src="/images/vario-images/VARIO Advisors long hill.avif"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-bottom"
+        />
       </div>
     </div>
   );

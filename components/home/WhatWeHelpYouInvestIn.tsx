@@ -1,51 +1,44 @@
 "use client";
 
-import {
-  BuildingOfficeIcon,
-  CurrencyDollarIcon,
-  FireIcon,
-  ChartBarIcon,
-  DocumentTextIcon,
-  ShieldCheckIcon,
-} from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import RealEstate from "@/components/ui/vario-icons/RealEstate";
+import HedgeFunds from "@/components/ui/vario-icons/HedgeFunds";
+import Commodities from "@/components/ui/vario-icons/Commodities";
+import PrivateEquity from "@/components/ui/vario-icons/private-equity";
+import Futures from "@/components/ui/vario-icons/Futures";
+import VentureCapital from "@/components/ui/vario-icons/VentureCapital";
 
 const investmentTypes = [
   {
     name: "Real Asset Strategies",
-    description:
-      "Including land investments and income-producing real estate.",
-    icon: BuildingOfficeIcon,
+    description: "Including land investments and income-producing real estate.",
+    icon: RealEstate,
   },
   {
     name: "Private Credit Opportunities",
-    description:
-      "Designed to produce consistent, income-focused returns.",
-    icon: CurrencyDollarIcon,
+    description: "Designed to produce consistent, income-focused returns.",
+    icon: HedgeFunds,
   },
   {
     name: "Oil & Gas Investments",
-    description:
-      "Offering energy exposure and potential tax advantages.",
-    icon: FireIcon,
+    description: "Offering energy exposure and potential tax advantages.",
+    icon: Commodities,
   },
   {
     name: "Private Equity Access",
-    description:
-      "Opportunities to participate in private-market growth.",
-    icon: ChartBarIcon,
+    description: "Opportunities to participate in private-market growth.",
+    icon: PrivateEquity,
   },
   {
     name: "Structured Note Strategies",
-    description:
-      "Institutional-level tools for protection and income.",
-    icon: DocumentTextIcon,
+    description: "Institutional-level tools for protection and income.",
+    icon: Futures,
   },
   {
     name: "Tax-Efficient Retirement Structures",
     description:
       "We coordinate with your tax professional to help optimize your after-tax income.",
-    icon: ShieldCheckIcon,
+    icon: VentureCapital,
   },
 ];
 
@@ -73,8 +66,18 @@ const itemVariants = {
 
 export default function WhatWeHelpYouInvestIn() {
   return (
-    <div className="bg-surface py-24 sm:py-32 overflow-x-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="relative bg-surface py-24 sm:py-32 overflow-x-hidden">
+      {/* Transition image at top - dark blue to white (flipped) */}
+      <div className="absolute top-0 left-0 right-0 w-full h-32 sm:h-40 lg:h-48 pointer-events-none">
+        <img
+          src="/images/vario-images/VARIO Advisors long hill flip 1.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-top"
+          // style={{ transform: "scaleY(-1)" }}
+        />
+      </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-20">
         <motion.div
           className="mx-auto max-w-2xl sm:text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -98,23 +101,20 @@ export default function WhatWeHelpYouInvestIn() {
           {investmentTypes.map((investment) => (
             <motion.div
               key={investment.name}
-              className="flex flex-col"
+              className="flex flex-col items-center text-center"
               variants={itemVariants}
             >
-              <h3 className="text-lg font-semibold text-text sm:text-xl">
-                <motion.div
-                  className="mb-6 flex size-10 items-center justify-center rounded-lg bg-[#005EB8]"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <investment.icon
-                    aria-hidden="true"
-                    className="size-6 text-white"
-                  />
-                </motion.div>
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center [&>div]:w-full [&>div]:h-full [&>div>svg]:w-full [&>div>svg]:h-full">
+                  <investment.icon />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-text sm:text-xl text-center">
                 {investment.name}
               </h3>
-              <p className="mt-1 flex flex-auto flex-col text-base/7 text-text-muted">{investment.description}</p>
+              <p className="mt-1 text-base/7 text-text-muted text-center">
+                {investment.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -122,4 +122,3 @@ export default function WhatWeHelpYouInvestIn() {
     </div>
   );
 }
-

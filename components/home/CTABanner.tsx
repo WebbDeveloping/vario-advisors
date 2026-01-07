@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function CTABanner() {
   return (
     <div className="bg-[#F8FBFF] overflow-x-hidden">
-      <div className="px-6 py-24 sm:py-32 lg:px-8">
+      <div className="px-6 pt-24 pb-32 sm:pt-32 sm:pb-40 lg:px-8">
         <motion.div
           className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -38,6 +38,13 @@ export default function CTABanner() {
             </Link>
           </motion.div>
         </motion.div>
+      </div>
+      <div className="w-full -mt-24 sm:-mt-28 lg:-mt-32">
+        <img
+          src="/images/vario-images/long-banner.avif"
+          alt=""
+          className="block w-full h-auto object-cover"
+        />
       </div>
     </div>
   );

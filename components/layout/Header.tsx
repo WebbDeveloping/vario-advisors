@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm overflow-x-hidden">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"

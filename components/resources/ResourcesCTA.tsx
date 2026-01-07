@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function ResourcesCTA() {
   return (
-    <div className="bg-[#F8FBFF]">
-      <div className="px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+    <div className="bg-[#F8FBFF] overflow-x-hidden">
+      <div className="px-6 pt-16 pb-32 sm:pt-24 sm:pb-40 lg:px-8 lg:pt-32">
         <motion.div
           className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -58,6 +58,13 @@ export default function ResourcesCTA() {
             </motion.a>
           </motion.div>
         </motion.div>
+      </div>
+      <div className="w-full -mt-24 sm:-mt-28 lg:-mt-32">
+        <img
+          src="/images/vario-images/long-banner.avif"
+          alt=""
+          className="block w-full h-auto object-cover"
+        />
       </div>
     </div>
   );
