@@ -1,30 +1,28 @@
 "use client";
 
-import {
-  CalendarDaysIcon,
-  BuildingLibraryIcon,
-  IdentificationIcon,
-} from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import HedgeFunds from "@/components/ui/vario-icons/HedgeFunds";
+import RealEstate from "@/components/ui/vario-icons/RealEstate";
+import PrivateEquity from "@/components/ui/vario-icons/private-equity";
 
 const features = [
   {
     name: "Retirement Income Planning",
     description:
       "Your retirement should feel predictable — not uncertain. We help you design a long-term income strategy that supports your lifestyle without relying on the ups and downs of the stock market.",
-    icon: CalendarDaysIcon,
+    icon: HedgeFunds,
   },
   {
     name: "Alternative Investment Integration",
     description:
       "Traditional portfolios are not built for today's world. We incorporate real assets, private credit, private equity, structured note strategies, and oil & gas to help strengthen and stabilize your retirement plan.",
-    icon: BuildingLibraryIcon,
+    icon: RealEstate,
   },
   {
     name: "Accredited Investor Discovery",
     description:
       "Many retirees qualify for investment opportunities they've never been told about. We help you identify whether you're eligible — and how it could change your financial future.",
-    icon: IdentificationIcon,
+    icon: PrivateEquity,
   },
 ];
 
@@ -81,14 +79,13 @@ export default function TheVarioDifference() {
               >
                 <h3 className="text-lg font-semibold text-text sm:text-xl">
                   <motion.div
-                    className="mb-6 flex size-10 items-center justify-center rounded-lg bg-[#005EB8]"
+                    className="mb-6 flex items-center justify-center"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <feature.icon
-                      aria-hidden="true"
-                      className="size-6 text-white"
-                    />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center [&>div]:w-full [&>div]:h-full [&>div>svg]:w-full [&>div>svg]:h-full">
+                      <feature.icon aria-hidden="true" />
+                    </div>
                   </motion.div>
                   {feature.name}
                 </h3>

@@ -4,7 +4,7 @@ import OurStory from "@/components/home/OurStory";
 import WhatWeHelpYouInvestIn from "@/components/home/WhatWeHelpYouInvestIn";
 import HowOurProcessWorks from "@/components/home/HowOurProcessWorks";
 import InsightsAndEducation from "@/components/home/InsightsAndEducation";
-import CTABanner from "@/components/home/CTABanner";
+import CTABanner from "@/components/ui/CTABanner";
 
 export default function Home() {
   return (
@@ -27,7 +27,10 @@ export default function Home() {
       <InsightsAndEducation />
 
       {/* CTA Banner Section */}
-      <CTABanner />
+      <CTABanner
+        title="Build a retirement that doesn't depend on the stock market."
+        buttons={[{ text: "Start Your Income Plan", href: "/contact" }]}
+      />
     </div>
   );
 }

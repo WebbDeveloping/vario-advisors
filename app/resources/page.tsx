@@ -2,7 +2,7 @@ import ResourcesHero from "@/components/resources/ResourcesHero";
 import GuidesSection from "@/components/resources/GuidesSection";
 import VideosSection from "@/components/resources/VideosSection";
 import ArticlesSection from "@/components/resources/ArticlesSection";
-import ResourcesCTA from "@/components/resources/ResourcesCTA";
+import CTABanner from "@/components/ui/CTABanner";
 
 export default function Resources() {
   return (
@@ -11,7 +11,18 @@ export default function Resources() {
       <GuidesSection />
       <VideosSection />
       <ArticlesSection />
-      <ResourcesCTA />
+      <CTABanner
+        title="Ready to Plan Your Retirement?"
+        description="Get personalized retirement planning advice tailored to your unique financial situation and goals."
+        buttons={[
+          { text: "Schedule a Consultation", href: "/contact" },
+          {
+            text: "Check Your Accredited Status",
+            href: "/accredited-investor",
+            variant: "secondary",
+          },
+        ]}
+      />
     </main>
   );
 }

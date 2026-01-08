@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import CTABanner from "@/components/ui/CTABanner";
 
 const faqs = [
   {
@@ -241,54 +242,14 @@ export default function FAQPage() {
         </div>
 
         {/* CTA section */}
-        <div className="bg-[#F8FBFF] mt-12 sm:mt-16">
-          <div className="px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-            <div className="mx-auto max-w-2xl text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="text-3xl font-semibold tracking-tight text-balance text-[#011E35] sm:text-4xl lg:text-5xl"
-              >
-                Still have questions?
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="mx-auto mt-4 max-w-xl text-base text-pretty text-[#011E35] sm:mt-6 sm:text-lg/8"
-              >
-                Our team is here to help. Contact us to learn more about how we
-                can help you plan for a secure retirement.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-x-6"
-              >
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="/contact"
-                  className="rounded-md bg-[#005EB8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8] transition-colors"
-                >
-                  Contact us
-                </motion.a>
-                <motion.a
-                  whileHover={{ x: 5 }}
-                  href="/contact"
-                  className="text-sm/6 font-semibold text-[#011E35]"
-                >
-                  Learn more <span aria-hidden="true">→</span>
-                </motion.a>
-              </motion.div>
-            </div>
-          </div>
-        </div>
+        <CTABanner
+          title="Still have questions?"
+          description="Our team is here to help. Contact us to learn more about how we can help you plan for a secure retirement."
+          buttons={[
+            { text: "Contact us", href: "/contact" },
+            { text: "Learn more", href: "/contact", variant: "secondary" },
+          ]}
+        />
       </main>
     </div>
   );

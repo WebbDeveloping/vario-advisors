@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowTrendingDownIcon,
-  ClockIcon,
-  IdentificationIcon,
-  CurrencyDollarIcon,
-  DocumentTextIcon,
-  CalculatorIcon,
-} from "@heroicons/react/24/outline";
+import Futures from "@/components/ui/vario-icons/Futures";
+import HedgeFunds from "@/components/ui/vario-icons/HedgeFunds";
+import PrivateEquity from "@/components/ui/vario-icons/private-equity";
+import Commodities from "@/components/ui/vario-icons/Commodities";
+import RealEstate from "@/components/ui/vario-icons/RealEstate";
+import VentureCapital from "@/components/ui/vario-icons/VentureCapital";
+import CTABanner from "@/components/ui/CTABanner";
 
 const stats = [
   { label: "Retirement plans created", value: "44 million" },
@@ -22,37 +21,37 @@ const values = [
     name: "Income waterfall design",
     description:
       "We structure your retirement income to flow from the most tax-efficient sources first, ensuring your savings last longer while maintaining your desired lifestyle throughout retirement.",
-    icon: ArrowTrendingDownIcon,
+    icon: Futures,
   },
   {
     name: "Longevity planning",
     description:
       "With people living longer than ever, we help you plan for a retirement that could span 30+ years. Our strategies account for extended lifespans and ensure your income never runs out.",
-    icon: ClockIcon,
+    icon: HedgeFunds,
   },
   {
     name: "Social Security optimization",
     description:
       "Timing matters. We help you determine the optimal age to claim Social Security benefits, potentially increasing your lifetime benefits by tens of thousands of dollars.",
-    icon: IdentificationIcon,
+    icon: PrivateEquity,
   },
   {
     name: "Inflation protection",
     description:
       "Inflation erodes purchasing power over time. We incorporate strategies and asset classes designed to help your retirement income keep pace with rising costs of living.",
-    icon: CurrencyDollarIcon,
+    icon: Commodities,
   },
   {
     name: "Required distribution planning",
     description:
       "Required Minimum Distributions (RMDs) can create tax challenges. We help you plan ahead to minimize the tax impact while meeting all legal requirements.",
-    icon: DocumentTextIcon,
+    icon: RealEstate,
   },
   {
     name: "Tax-focused withdrawal strategies",
     description:
       "The order in which you withdraw from different accounts can significantly impact your tax burden. We coordinate with your tax professional to optimize your after-tax retirement income.",
-    icon: CalculatorIcon,
+    icon: VentureCapital,
   },
 ];
 const investmentStrategies = [
@@ -277,13 +276,13 @@ export default function ServicePage() {
 
         {/* Feature section */}
         <div className="mx-auto mt-20 max-w-7xl px-6 sm:mt-32 lg:px-8 lg:mt-40">
-          <div className="mx-auto max-w-2xl lg:mx-0">
+          <div className="mx-auto max-w-2xl lg:mx-auto lg:text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl"
+              className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl lg:text-center"
             >
               Retirement Income Planning
             </motion.h2>
@@ -292,12 +291,12 @@ export default function ServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-4 text-base text-gray-700 sm:mt-6 sm:text-lg/8"
+              className="mt-4 text-base text-gray-700 sm:mt-6 sm:text-lg/8 lg:text-center"
             >
               Your retirement plan includes:
             </motion.p>
           </div>
-          <dl className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-base sm:mt-16 sm:grid-cols-2 sm:gap-y-16 sm:text-base/7 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <dl className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-base sm:mt-16 sm:grid-cols-2 sm:gap-y-16 sm:text-base/7 lg:mx-auto lg:max-w-none lg:grid-cols-3">
             {values.map((value, index) => (
               <motion.div
                 key={value.name}
@@ -305,22 +304,21 @@ export default function ServicePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col"
+                className="flex flex-col lg:text-center"
               >
-                <dt className="text-base font-semibold text-gray-900 sm:text-lg">
+                <dt className="text-base font-semibold text-gray-900 sm:text-lg lg:text-center">
                   <motion.div
-                    className="mb-6 flex size-10 items-center justify-center rounded-lg bg-[#005EB8]"
+                    className="mb-6 flex items-center justify-center"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <value.icon
-                      aria-hidden="true"
-                      className="size-6 text-white"
-                    />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center [&>div]:w-full [&>div]:h-full [&>div>svg]:w-full [&>div>svg]:h-full">
+                      <value.icon aria-hidden="true" />
+                    </div>
                   </motion.div>
                   {value.name}
                 </dt>
-                <dd className="mt-2 text-sm text-gray-600 sm:mt-1 sm:text-base">
+                <dd className="mt-2 text-sm text-gray-600 sm:mt-1 sm:text-base lg:text-center">
                   {value.description}
                 </dd>
               </motion.div>
@@ -521,55 +519,18 @@ export default function ServicePage() {
         </div>
 
         {/* CTA section */}
-        <div className="bg-[#F8FBFF] mt-12 sm:mt-16">
-          <div className="px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-            <div className="mx-auto max-w-2xl text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="text-3xl font-semibold tracking-tight text-balance text-[#011E35] sm:text-4xl lg:text-5xl"
-              >
-                Check Your Accredited Status
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="mx-auto mt-4 max-w-xl text-base text-pretty text-[#011E35] sm:mt-6 sm:text-lg/8"
-              >
-                Many retirees qualify for investment opportunities they've never
-                been told about. Discover if you're eligible for expanded
-                investment options.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-x-6"
-              >
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="/accredited-investor"
-                  className="rounded-md bg-[#005EB8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8] transition-colors"
-                >
-                  Get started
-                </motion.a>
-                <motion.a
-                  whileHover={{ x: 5 }}
-                  href="/accredited-investor"
-                  className="text-sm/6 font-semibold text-[#011E35]"
-                >
-                  Learn more <span aria-hidden="true">→</span>
-                </motion.a>
-              </motion.div>
-            </div>
-          </div>
-        </div>
+        <CTABanner
+          title="Check Your Accredited Status"
+          description="Many retirees qualify for investment opportunities they've never been told about. Discover if you're eligible for expanded investment options."
+          buttons={[
+            { text: "Get started", href: "/accredited-investor" },
+            {
+              text: "Learn more",
+              href: "/accredited-investor",
+              variant: "secondary",
+            },
+          ]}
+        />
       </main>
     </div>
   );

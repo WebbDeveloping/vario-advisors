@@ -1,42 +1,40 @@
 "use client";
 
-import {
-  CurrencyDollarIcon,
-  Squares2X2Icon,
-  CalculatorIcon,
-  AcademicCapIcon,
-  HeartIcon,
-} from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import HedgeFunds from "@/components/ui/vario-icons/HedgeFunds";
+import RealEstate from "@/components/ui/vario-icons/RealEstate";
+import VentureCapital from "@/components/ui/vario-icons/VentureCapital";
+import PrivateEquity from "@/components/ui/vario-icons/private-equity";
+import Futures from "@/components/ui/vario-icons/Futures";
 
 const principles = [
   {
     name: "Income First",
     description:
       "Retirement should focus on predictable income, not speculation.",
-    icon: CurrencyDollarIcon,
+    icon: HedgeFunds,
   },
   {
     name: "Diversify Beyond the Market",
     description:
       "Real assets and private-market investments offer stability the public markets cannot.",
-    icon: Squares2X2Icon,
+    icon: RealEstate,
   },
   {
     name: "Tax Efficiency Matters",
     description:
       "We collaborate with your tax professional to help optimize your after-tax retirement income.",
-    icon: CalculatorIcon,
+    icon: VentureCapital,
   },
   {
     name: "Education Over Sales",
     description: "Our role is to teach, guide, and empower — never pressure.",
-    icon: AcademicCapIcon,
+    icon: PrivateEquity,
   },
   {
     name: "Long-Term Partnership",
     description: "We aim to be your advisory team for life.",
-    icon: HeartIcon,
+    icon: Futures,
   },
 ];
 
@@ -64,8 +62,17 @@ const itemVariants = {
 
 export default function OurPhilosophy() {
   return (
-    <div className="bg-surface py-20 sm:py-28 lg:py-32 overflow-x-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="relative bg-surface py-20 sm:py-28 lg:py-32 overflow-x-hidden">
+      {/* Transition image at top - dark blue to white (flipped) */}
+      <div className="absolute top-0 left-0 right-0 w-full h-32 sm:h-40 lg:h-48 pointer-events-none">
+        <img
+          src="/images/vario-images/VARIO Advisors long hill flip 1.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-20">
         <motion.div
           className="mx-auto max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
@@ -95,14 +102,13 @@ export default function OurPhilosophy() {
               >
                 <h3 className="text-xl font-semibold text-[#011E35] sm:text-2xl leading-snug">
                   <motion.div
-                    className="mb-4 mx-auto flex size-10 items-center justify-center rounded-lg bg-[#005EB8]"
+                    className="mb-4 mx-auto flex items-center justify-center"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <principle.icon
-                      aria-hidden="true"
-                      className="size-6 text-white"
-                    />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center [&>div]:w-full [&>div]:h-full [&>div>svg]:w-full [&>div>svg]:h-full">
+                      <principle.icon aria-hidden="true" />
+                    </div>
                   </motion.div>
                   {principle.name}
                 </h3>

@@ -9,7 +9,7 @@ export default function Mission() {
         aria-hidden="true"
         className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 sm:-mr-80 lg:-mr-96"
       />
-      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:px-8 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 py-20 pb-40 sm:py-28 sm:pb-48 lg:px-8 lg:py-32 lg:pb-56">
         <motion.div
           className="mx-auto max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,15 @@ export default function Mission() {
           </motion.p>
         </motion.div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-linear-to-t from-white sm:h-32" />
+      {/* Transition image at bottom - white to dark blue */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-32 sm:h-40 lg:h-48 pointer-events-none">
+        <img
+          src="/images/vario-images/VARIO Advisors long hill.avif"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-bottom"
+        />
+      </div>
     </div>
   );
 }
