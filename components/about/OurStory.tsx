@@ -59,28 +59,30 @@ export default function OurStory() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p>
-                My name is Zach Christensen, and the roots of Vario Advisors go
-                back to my grandparents in Victor, Idaho. My grandfather trusted
-                the stock market with his retirement savings, but when the
-                market turned, everything he worked for was wiped out. To make
-                ends meet, he took a job in a nursing home — working until the
-                final days of his life.
+                At Vario Advisors, we understand that your portfolio is more
+                than just a number. It represents time and energy invested to
+                secure a financial future for loved ones and family, often
+                including hours sacrificed away from those very people to
+                achieve it. That's why we take our responsibility to our clients
+                personally, treating each and every portfolio as if it were our
+                own. We will do everything in our power to make sure that you
+                feel like you have a "financial partner" at your fingertips.
               </p>
               <p>
-                My grandmother's story was different. She owned land — a real,
-                tangible asset. When she sold it, that one decision provided the
-                financial security that the stock market couldn't.
+                Through our comprehensive and holistic approach, we can assure
+                you that all financial strategies will be evaluated, and nothing
+                will be forgotten or left on the table. While each case is
+                designed independently, they are all treated with the same
+                integrity, respect, and detail-oriented forward thinking that is
+                paramount to the Vario Advisors experience.
               </p>
               <p>
-                These two outcomes shaped my life and my philosophy:{" "}
-                <span className="font-semibold text-white">
-                  Real assets matter. Predictability matters. Retirees deserve
-                  better.
-                </span>
+                We welcome the opportunity to introduce you to our brand of
+                tailor-made services, featuring the Vario Fund and
+                individualized attention. This is what we do, and we do it well.
               </p>
-              <p className="text-base font-medium text-white leading-7 sm:text-lg sm:leading-8">
-                Vario Advisors was created with a mission: to help families
-                build retirements that aren't dependent on the stock market.
+              <p className="text-base font-medium text-white leading-7 sm:text-lg sm:leading-8 mt-8">
+                — Zachary L Christensen, RFC - President
               </p>
             </motion.div>
           </motion.div>

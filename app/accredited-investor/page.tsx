@@ -623,6 +623,15 @@ export default function AccreditedInvestorPage() {
         </div>
       </div>
 
+      {/* Image Section - Transition to Footer */}
+      <div className="w-full pt-18">
+        <img
+          src="/images/vario-images/long-banner.avif"
+          alt=""
+          className="block w-full h-auto object-cover"
+        />
+      </div>
+
       {/* Results Section - Conditional Display */}
       {isSubmitted && resultType && (
         <div

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import HedgeFunds from "@/components/ui/vario-icons/HedgeFunds";
 import RealEstate from "@/components/ui/vario-icons/RealEstate";
 import PrivateEquity from "@/components/ui/vario-icons/private-equity";
+import TransitionImage from "@/components/ui/TransitionImage";
 
 const features = [
   {
@@ -97,15 +98,10 @@ export default function TheVarioDifference() {
           </div>
         </motion.div>
       </div>
-      {/* Transition image at bottom - white to dark blue */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-32 sm:h-40 lg:h-48 pointer-events-none">
-        <img
-          src="/images/vario-images/VARIO Advisors long hill.avif"
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover object-bottom"
-        />
-      </div>
+      <TransitionImage
+        position="bottom"
+        imageSrc="/images/vario-images/VARIO Advisors long hill.avif"
+      />
     </div>
   );
 }

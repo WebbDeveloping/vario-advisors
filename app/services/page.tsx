@@ -8,6 +8,7 @@ import Commodities from "@/components/ui/vario-icons/Commodities";
 import RealEstate from "@/components/ui/vario-icons/RealEstate";
 import VentureCapital from "@/components/ui/vario-icons/VentureCapital";
 import CTABanner from "@/components/ui/CTABanner";
+import TransitionImage from "@/components/ui/TransitionImage";
 
 const stats = [
   { label: "Retirement plans created", value: "44 million" },
@@ -210,59 +211,45 @@ export default function ServicePage() {
               </div>
             </div>
           </div>
+          <TransitionImage
+            position="bottom"
+            imageSrc="/images/vario-images/VARIO Advisors long hill.avif"
+          />
         </div>
 
-        {/* Content section */}
-        <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl"
-            >
-              Our Services Overview
-            </motion.h2>
-            <div className="mt-6 flex flex-col gap-x-8 gap-y-12 sm:gap-y-16 lg:flex-row lg:gap-y-20">
-              <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-lg text-gray-600 sm:text-xl/8">
-                  Most retirees still rely on outdated strategies like the 60/40
-                  portfolio — a model built for a world that no longer exists.
-                </p>
-                <p className="mt-6 max-w-xl text-base text-gray-700 sm:mt-10 sm:text-base/7">
-                  We combine traditional retirement planning with modern
-                  alternative investment strategies to help create predictable,
-                  stable retirement income.
-                </p>
-              </div>
-              <div className="lg:flex lg:flex-auto lg:justify-center">
-                <dl className="w-full space-y-6 sm:space-y-8 sm:w-64 xl:w-80">
-                  {stats.map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="flex flex-col-reverse gap-y-2 sm:gap-y-4"
-                    >
-                      <dt className="text-sm text-gray-600 sm:text-base/7">
-                        {stat.label}
-                      </dt>
-                      <dd className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                        {stat.value}
-                      </dd>
-                    </motion.div>
-                  ))}
-                </dl>
+        {/* Our Services Overview section */}
+        <div className="relative bg-[#011E35] py-20 sm:py-28 lg:py-32 overflow-x-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:mx-auto lg:max-w-none">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl font-semibold tracking-tight text-pretty text-surface sm:text-4xl lg:text-5xl text-center uppercase"
+              >
+                Our Services Overview
+              </motion.h2>
+              <div className="mt-6 flex flex-col gap-x-8 gap-y-12 sm:gap-y-16 lg:flex-row lg:gap-y-20 lg:justify-center">
+                <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
+                  <p className="text-lg text-gray-200 sm:text-xl/8 text-center">
+                    Most retirees still rely on outdated strategies like the
+                    60/40 portfolio — a model built for a world that no longer
+                    exists.
+                  </p>
+                  <p className="mt-6 max-w-xl text-base text-gray-300 sm:mt-10 sm:text-base/7 mx-auto text-center">
+                    We combine traditional retirement planning with modern
+                    alternative investment strategies to help create
+                    predictable, stable retirement income.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Image section */}
-        <div className="mt-20 sm:mt-32 xl:mx-auto xl:max-w-7xl xl:px-8 lg:mt-40">
+        {/* <div className="mt-20 sm:mt-32 xl:mx-auto xl:max-w-7xl xl:px-8 lg:mt-40">
           <motion.img
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -272,58 +259,64 @@ export default function ServicePage() {
             src="/images/services-banner/vario-full-banner.png"
             className="aspect-5/2 w-full object-cover outline-1 -outline-offset-1 outline-black/5 xl:rounded-3xl"
           />
-        </div>
+        </div> */}
 
-        {/* Feature section */}
-        <div className="mx-auto mt-20 max-w-7xl px-6 sm:mt-32 lg:px-8 lg:mt-40">
-          <div className="mx-auto max-w-2xl lg:mx-auto lg:text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl lg:text-center"
-            >
-              Retirement Income Planning
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-4 text-base text-gray-700 sm:mt-6 sm:text-lg/8 lg:text-center"
-            >
-              Your retirement plan includes:
-            </motion.p>
-          </div>
-          <dl className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-base sm:mt-16 sm:grid-cols-2 sm:gap-y-16 sm:text-base/7 lg:mx-auto lg:max-w-none lg:grid-cols-3">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.name}
-                initial={{ opacity: 0, y: 30 }}
+        {/* Feature section - Retirement Income Planning */}
+        <div className="relative overflow-x-hidden">
+          <TransitionImage
+            position="top"
+            imageSrc="/images/vario-images/VARIO Advisors long hill flip 1.png"
+          />
+          <div className="mx-auto mt-20 max-w-7xl px-6 sm:mt-32 lg:px-8 lg:mt-40 pt-20">
+            <div className="mx-auto max-w-2xl lg:mx-auto lg:text-center">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col lg:text-center"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl lg:text-center"
               >
-                <dt className="text-base font-semibold text-gray-900 sm:text-lg lg:text-center">
-                  <motion.div
-                    className="mb-6 flex items-center justify-center"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center [&>div]:w-full [&>div]:h-full [&>div>svg]:w-full [&>div>svg]:h-full">
-                      <value.icon aria-hidden="true" />
-                    </div>
-                  </motion.div>
-                  {value.name}
-                </dt>
-                <dd className="mt-2 text-sm text-gray-600 sm:mt-1 sm:text-base lg:text-center">
-                  {value.description}
-                </dd>
-              </motion.div>
-            ))}
-          </dl>
+                Retirement Income Planning
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="mt-4 text-base text-gray-700 sm:mt-6 sm:text-lg/8 lg:text-center"
+              >
+                Your retirement plan includes:
+              </motion.p>
+            </div>
+            <dl className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-base sm:mt-16 sm:grid-cols-2 sm:gap-y-16 sm:text-base/7 lg:mx-auto lg:max-w-none lg:grid-cols-3">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex flex-col lg:text-center"
+                >
+                  <dt className="text-base font-semibold text-gray-900 sm:text-lg lg:text-center">
+                    <motion.div
+                      className="mb-6 flex items-center justify-start lg:justify-center"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center [&>div]:w-full [&>div]:h-full [&>div>svg]:w-full [&>div>svg]:h-full">
+                        <value.icon aria-hidden="true" />
+                      </div>
+                    </motion.div>
+                    {value.name}
+                  </dt>
+                  <dd className="mt-2 text-sm text-gray-600 sm:mt-1 sm:text-base lg:text-center">
+                    {value.description}
+                  </dd>
+                </motion.div>
+              ))}
+            </dl>
+          </div>
         </div>
 
         {/* Logo cloud */}

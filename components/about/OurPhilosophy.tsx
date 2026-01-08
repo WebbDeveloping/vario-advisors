@@ -6,6 +6,7 @@ import RealEstate from "@/components/ui/vario-icons/RealEstate";
 import VentureCapital from "@/components/ui/vario-icons/VentureCapital";
 import PrivateEquity from "@/components/ui/vario-icons/private-equity";
 import Futures from "@/components/ui/vario-icons/Futures";
+import TransitionImage from "@/components/ui/TransitionImage";
 
 const principles = [
   {
@@ -63,15 +64,10 @@ const itemVariants = {
 export default function OurPhilosophy() {
   return (
     <div className="relative bg-surface py-20 sm:py-28 lg:py-32 overflow-x-hidden">
-      {/* Transition image at top - dark blue to white (flipped) */}
-      <div className="absolute top-0 left-0 right-0 w-full h-32 sm:h-40 lg:h-48 pointer-events-none">
-        <img
-          src="/images/vario-images/VARIO Advisors long hill flip 1.png"
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover object-top"
-        />
-      </div>
+      <TransitionImage
+        position="top"
+        imageSrc="/images/vario-images/VARIO Advisors long hill flip 1.png"
+      />
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-20">
         <motion.div
           className="mx-auto max-w-2xl"
