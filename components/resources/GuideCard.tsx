@@ -48,11 +48,14 @@ export default function GuideCard({
           )}
           <motion.a
             href={downloadUrl}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-md bg-[#005EB8] px-4 py-2 text-sm font-semibold text-white shadow-xs hover:bg-[#004a94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005EB8] transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Download PDF
+            Download
           </motion.a>
         </div>
       </div>

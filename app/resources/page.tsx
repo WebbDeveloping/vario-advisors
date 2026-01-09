@@ -3,12 +3,15 @@ import GuidesSection from "@/components/resources/GuidesSection";
 import VideosSection from "@/components/resources/VideosSection";
 import ArticlesSection from "@/components/resources/ArticlesSection";
 import CTABanner from "@/components/ui/CTABanner";
+import { getDownloadFiles } from "@/lib/downloads";
 
 export default function Resources() {
+  const downloadFiles = getDownloadFiles();
+
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
       <ResourcesHero />
-      <GuidesSection />
+      <GuidesSection downloadFiles={downloadFiles} />
       <VideosSection />
       <ArticlesSection />
       <CTABanner
