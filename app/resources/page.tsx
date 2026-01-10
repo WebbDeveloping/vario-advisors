@@ -13,7 +13,7 @@ export default function Resources() {
       <ResourcesHero />
       <GuidesSection downloadFiles={downloadFiles} />
       <VideosSection />
-      <ArticlesSection />
+      {/* <ArticlesSection /> */}
       <CTABanner
         title="Ready to Plan Your Retirement?"
         description="Get personalized retirement planning advice tailored to your unique financial situation and goals."

@@ -5,36 +5,28 @@ import VideoCard from "./VideoCard";
 
 const videos = [
   {
-    id: 1,
-    title: "Zach's Story",
-    description:
-      "Hear from one of our clients about their retirement planning journey and how alternative investments transformed their financial future.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder
-    duration: "5:23",
-  },
-  {
     id: 2,
-    title: "Retirement Planning Strategies",
+    title: "Why the 6040 Portfolio No Longer Works",
     description:
-      "Learn about modern retirement planning strategies that go beyond traditional 60/40 portfolios and help create sustainable income streams.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder
-    duration: "8:45",
+      "A look at why the 60/40 portfolio is no longer a viable retirement strategy and how alternative investments can help you achieve your financial goals.",
+    videoUrl: "https://youtu.be/mRAo1uLh3pU?si=MmoId4YoQhJmtz5y",
+    duration: "1:04",
   },
   {
     id: 3,
-    title: "Why Alternatives Matter",
+    title: "How Retirement Income Is Different Than Investing",
     description:
-      "Discover why alternative investments are becoming essential for retirees seeking diversification, income, and protection from market volatility.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder
-    duration: "6:12",
+      "A look at how retirement income is different than investing and how alternative investments can help you achieve your financial goals.",
+    videoUrl: "https://youtu.be/0nopLeZb6uc?si=189Jrp4F2HwWSUqz",
+    duration: "1:07",
   },
   {
     id: 4,
-    title: "Income-Focused Investing",
+    title: "What Changed in Retirement Planning",
     description:
       "Explore investment strategies designed to generate consistent income during retirement while preserving capital for the long term.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder
-    duration: "7:30",
+    videoUrl: "https://youtu.be/IhdQC6tXgpY?si=QdLYQ1LLt8f0u-Dn",
+    duration: "1:01",
   },
 ];
 

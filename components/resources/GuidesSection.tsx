@@ -14,6 +14,8 @@ const guideDescriptions: Record<string, string> = {
     "A comprehensive guide to help you determine if you qualify as an accredited investor and understand the investment opportunities available to you.",
   "Modern Retirement Planning Guide":
     "Learn how to build a retirement plan that adapts to today's economic landscape, including strategies for income generation and wealth preservation.",
+  "Modern Retirement Income Planning":
+    "Learn how to build a retirement plan that adapts to today's economic landscape, including strategies for income generation and wealth preservation.",
   "Understanding Alternative Investments":
     "Explore how alternative investments can diversify your portfolio, reduce correlation to public markets, and provide more stable retirement income.",
   "How Real Assets Create Stability":
@@ -72,20 +74,48 @@ const containerVariants = {
 };
 
 export default function GuidesSection({ downloadFiles }: GuidesSectionProps) {
+  // Allowlist of guides to keep on resources page
+  const allowedGuides = [
+    "Accredited Investor Checklist",
+    "Modern Retirement Planning Guide",
+    "Modern Retirement Income Planning", // Alternative name for the same guide
+    "Understanding Alternative Investments",
+    "The Power of Real Assets",
+  ];
+
   // Create guide entries from download files
   const existingTitles = Object.keys(guideDescriptions);
-  const guides = downloadFiles.map((file) => {
-    const matchedTitle = matchFileToGuide(file, existingTitles);
-    const title = matchedTitle || file.displayName;
-    
-    return {
-      id: file.filename,
-      title,
-      description: getDescription(title),
-      downloadUrl: file.path,
-      fileSize: file.formattedSize,
-    };
-  });
+  const guides = downloadFiles
+    .map((file) => {
+      const matchedTitle = matchFileToGuide(file, existingTitles);
+      const title = matchedTitle || file.displayName;
+      
+      return {
+        id: file.filename,
+        title,
+        description: getDescription(title),
+        downloadUrl: file.path,
+        fileSize: file.formattedSize,
+        displayName: file.displayName,
+      };
+    })
+    .filter((guide) => {
+      // Check if guide title or displayName matches allowed guides
+      const normalizedTitle = normalizeString(guide.title);
+      const normalizedDisplayName = normalizeString(guide.displayName);
+      
+      return allowedGuides.some((allowed) => {
+        const normalizedAllowed = normalizeString(allowed);
+        return (
+          normalizedTitle === normalizedAllowed ||
+          normalizedDisplayName === normalizedAllowed ||
+          normalizedTitle.includes(normalizedAllowed) ||
+          normalizedDisplayName.includes(normalizedAllowed) ||
+          normalizedAllowed.includes(normalizedTitle) ||
+          normalizedAllowed.includes(normalizedDisplayName)
+        );
+      });
+    });
 
   return (
     <div className="bg-surface py-16 sm:py-24">

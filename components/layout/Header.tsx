@@ -49,12 +49,18 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4">
+          <Link
+            href="https://variofund.investnext.com/?next=/portal/offerings/7897/"
+            className="text-sm/6 font-semibold text-gray-900 hover:text-[#005EB8] transition-colors"
+          >
+            Login
+          </Link>
           <Link
             href="/contact"
             className="text-sm/6 font-semibold text-[#005EB8] hover:text-[#004a94] transition-colors"
           >
-            Get Started <span aria-hidden="true">&rarr;</span>
+            Get Started <span aria-hidden="true" />
           </Link>
         </div>
       </nav>
@@ -96,13 +102,21 @@ export default function Header() {
                   </SheetClose>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="py-6 space-y-2">
                 <SheetClose asChild>
                   <Link
                     href="https://variofund.investnext.com/?next=/portal/offerings/7897/"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    Login
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/contact"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-[#005EB8] hover:bg-gray-50"
                   >
-                    Get Started
+                    Get Started <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </SheetClose>
               </div>
