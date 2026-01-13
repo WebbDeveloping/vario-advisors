@@ -1,65 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ArticleCard from "@/components/resources/ArticleCard";
+import type { DownloadFile } from "@/lib/downloads";
 
 const posts = [
   {
     id: 1,
     title: "Why the 60/40 Portfolio Is Dead",
-    href: "#",
-    // Image: Stock market charts/graphs showing volatility or decline, professional financial data visualization
-    // Search terms: "stock market decline", "portfolio diversification", "financial charts", "market volatility"
+    description: "Traditional retirement portfolios are struggling in today's market. Learn why diversification beyond stocks and bonds is essential for modern retirees.",
     imageUrl:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    category: "Investment Strategy",
   },
   {
     id: 2,
     title: "What Most Advisors Don't Tell Retirees",
-    href: "#",
-    // Image: Mature professional couple (50+) reviewing documents together, consultant meeting, or advisor-client discussion
-    // Search terms: "retirement consultation", "financial advisor meeting", "mature couple planning", "senior financial planning"
+    description: "Discover the investment opportunities and strategies that many financial advisors overlook when planning for retirement income.",
     imageUrl:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    category: "Retirement Planning",
   },
   {
     id: 3,
     title: "The Power of Real Assets",
-    href: "#",
-    // Image: Farmland, ranch land, commercial real estate, or natural landscapes representing tangible property
-    // Search terms: "farmland", "real estate investment", "agricultural land", "commercial property", "land investment"
+    description: "Explore how real estate, farmland, and infrastructure investments can provide stable income and inflation protection for your retirement portfolio.",
     imageUrl:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    category: "Alternative Investments",
   },
   {
     id: 4,
     title: "Modern Retirement Income Planning",
-    href: "#",
-    // Image: Mature professional (50+) at desk with financial documents, calculator, or tablet showing financial planning
-    // Search terms: "retirement planning", "financial planning desk", "senior professional working", "retirement strategy"
+    description: "Learn how to structure your retirement income to last as long as you do, using strategies that adapt to changing economic conditions.",
     imageUrl:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    category: "Retirement Planning",
   },
 ];
+
+// Normalize strings for comparison (lowercase, remove special chars)
+function normalizeString(str: string): string {
+  return str.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+// Match article title to download file
+function matchFileToArticle(title: string, file: DownloadFile): boolean {
+  const normalizedTitle = normalizeString(title);
+  const normalizedFileName = normalizeString(file.displayName);
+  
+  // Check if titles match (exact or contains)
+  // normalizeString handles "60/40" → "6040" and "Don't" → "Dont" automatically
+  return (
+    normalizedTitle === normalizedFileName ||
+    normalizedFileName.includes(normalizedTitle) ||
+    normalizedTitle.includes(normalizedFileName)
+  );
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-  },
-};
+interface InsightsAndEducationProps {
+  downloadFiles?: DownloadFile[];
+}
 
-export default function InsightsAndEducation() {
+export default function InsightsAndEducation({ downloadFiles = [] }: InsightsAndEducationProps) {
   return (
     <div className="bg-white py-24 sm:py-32 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -84,35 +97,29 @@ export default function InsightsAndEducation() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {posts.map((post) => (
-            <motion.article
-              key={post.id}
-              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80"
-              variants={itemVariants}
-              whileHover={{ scale: 1.03, y: -5 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut",
-                type: "spring",
-                stiffness: 300,
-              }}
-            >
-              <img
-                alt=""
-                src={post.imageUrl}
-                className="absolute inset-0 -z-10 size-full object-cover"
-              />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-              <div className="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10" />
+          {posts.map((post) => {
+            // Find matching download file
+            const matchingFile = downloadFiles.find((file) =>
+              matchFileToArticle(post.title, file)
+            );
 
-              <h3 className="mt-3 text-lg font-semibold text-white sm:text-xl">
-                <a href={post.href}>
-                  <span className="absolute inset-0" />
-                  {post.title}
-                </a>
-              </h3>
-            </motion.article>
-          ))}
+            const fileType = matchingFile
+              ? (matchingFile.extension === "pdf" ? "pdf" : "docx")
+              : undefined;
+
+            return (
+              <ArticleCard
+                key={post.id}
+                title={post.title}
+                description={post.description}
+                imageUrl={post.imageUrl}
+                category={post.category}
+                downloadable={!!matchingFile}
+                downloadUrl={matchingFile?.path}
+                fileType={fileType}
+              />
+            );
+          })}
         </motion.div>
       </div>
     </div>

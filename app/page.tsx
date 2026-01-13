@@ -5,8 +5,11 @@ import WhatWeHelpYouInvestIn from "@/components/home/WhatWeHelpYouInvestIn";
 import HowOurProcessWorks from "@/components/home/HowOurProcessWorks";
 import InsightsAndEducation from "@/components/home/InsightsAndEducation";
 import CTABanner from "@/components/ui/CTABanner";
+import { getDownloadFiles } from "@/lib/downloads";
 
 export default function Home() {
+  const downloadFiles = getDownloadFiles();
+
   return (
     <div className="bg-surface overflow-x-hidden">
       <Hero />
@@ -24,7 +27,7 @@ export default function Home() {
       <HowOurProcessWorks />
 
       {/* Insights & Education Section */}
-      <InsightsAndEducation />
+      <InsightsAndEducation downloadFiles={downloadFiles} />
 
       {/* CTA Banner Section */}
       <CTABanner
