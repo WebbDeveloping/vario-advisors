@@ -7,22 +7,14 @@ import type { DownloadFile } from "@/lib/downloads";
 const posts = [
   {
     id: 1,
-    title: "Why the 60/40 Portfolio Is Dead",
-    description: "Traditional retirement portfolios are struggling in today's market. Learn why diversification beyond stocks and bonds is essential for modern retirees.",
+    title: "Accredited Investor Checklist",
+    description: "Determine if you qualify as an accredited investor and unlock access to exclusive investment opportunities not available to the general public.",
     imageUrl:
-      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    category: "Investment Strategy",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    category: "Education",
   },
   {
     id: 2,
-    title: "What Most Advisors Don't Tell Retirees",
-    description: "Discover the investment opportunities and strategies that many financial advisors overlook when planning for retirement income.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    category: "Retirement Planning",
-  },
-  {
-    id: 3,
     title: "The Power of Real Assets",
     description: "Explore how real estate, farmland, and infrastructure investments can provide stable income and inflation protection for your retirement portfolio.",
     imageUrl:
@@ -30,7 +22,7 @@ const posts = [
     category: "Alternative Investments",
   },
   {
-    id: 4,
+    id: 3,
     title: "Modern Retirement Income Planning",
     description: "Learn how to structure your retirement income to last as long as you do, using strategies that adapt to changing economic conditions.",
     imageUrl:
@@ -107,6 +99,11 @@ export default function InsightsAndEducation({ downloadFiles = [] }: InsightsAnd
               ? (matchingFile.extension === "pdf" ? "pdf" : "docx")
               : undefined;
 
+            // Set view-only for PDF (Accredited Investor Checklist)
+            // Set download-only for DOCX files (The Power of Real Assets, Modern Retirement Income Planning)
+            const isViewOnly = matchingFile?.extension === "pdf";
+            const isDownloadOnly = matchingFile?.extension === "docx";
+
             return (
               <ArticleCard
                 key={post.id}
@@ -117,6 +114,8 @@ export default function InsightsAndEducation({ downloadFiles = [] }: InsightsAnd
                 downloadable={!!matchingFile}
                 downloadUrl={matchingFile?.path}
                 fileType={fileType}
+                viewOnly={isViewOnly}
+                downloadOnly={isDownloadOnly}
               />
             );
           })}

@@ -16,6 +16,8 @@ interface ArticleCardProps {
   downloadable?: boolean;
   downloadUrl?: string;
   fileType?: "pdf" | "docx";
+  viewOnly?: boolean;
+  downloadOnly?: boolean;
 }
 
 export default function ArticleCard({
@@ -28,6 +30,8 @@ export default function ArticleCard({
   downloadable = false,
   downloadUrl,
   fileType,
+  viewOnly = false,
+  downloadOnly = false,
 }: ArticleCardProps) {
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
 
@@ -112,7 +116,8 @@ export default function ArticleCard({
           </p>
           {downloadable && downloadUrl && (
             <div className="mt-4 flex flex-wrap gap-2">
-              {fileType === "pdf" && (
+              {/* Show View button only for PDFs and when not in download-only mode */}
+              {fileType === "pdf" && !downloadOnly && (
                 <Button
                   onClick={handleView}
                   size="sm"
@@ -123,15 +128,18 @@ export default function ArticleCard({
                   View
                 </Button>
               )}
-              <Button
-                onClick={handleDownload}
-                size="sm"
-                variant="secondary"
-                className="bg-white/90 text-gray-900 hover:bg-white"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download
-              </Button>
+              {/* Show Download button only when not in view-only mode */}
+              {!viewOnly && (
+                <Button
+                  onClick={handleDownload}
+                  size="sm"
+                  variant="secondary"
+                  className="bg-white/90 text-gray-900 hover:bg-white"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download
+                </Button>
+              )}
             </div>
           )}
         </div>

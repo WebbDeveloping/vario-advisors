@@ -2,75 +2,59 @@
 
 import { motion } from "framer-motion";
 import ArticleCard from "./ArticleCard";
+import type { DownloadFile } from "@/lib/downloads";
 
 const articles = [
   {
     id: 1,
-    title: "Why the 60/40 Portfolio Is Dead",
+    title: "Accredited Investor Checklist",
     description:
-      "Traditional retirement portfolios are struggling in today's market. Learn why diversification beyond stocks and bonds is essential for modern retirees.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    href: "#",
-    date: "March 15, 2024",
-    category: "Investment Strategy",
-  },
-  {
-    id: 2,
-    title: "What Most Advisors Don't Tell Retirees",
-    description:
-      "Discover the investment opportunities and strategies that many financial advisors overlook when planning for retirement income.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    href: "#",
-    date: "March 8, 2024",
-    category: "Retirement Planning",
-  },
-  {
-    id: 3,
-    title: "The Power of Real Assets",
-    description:
-      "Explore how real estate, farmland, and infrastructure investments can provide stable income and inflation protection for your retirement portfolio.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    href: "#",
-    date: "March 1, 2024",
-    category: "Alternative Investments",
-  },
-  {
-    id: 4,
-    title: "Modern Retirement Income Planning",
-    description:
-      "Learn how to structure your retirement income to last as long as you do, using strategies that adapt to changing economic conditions.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    href: "#",
-    date: "February 22, 2024",
-    category: "Retirement Planning",
-  },
-  {
-    id: 5,
-    title: "Understanding Accredited Investor Status",
-    description:
-      "Many retirees qualify for investment opportunities they've never heard about. Learn how to determine if you're an accredited investor.",
+      "Determine if you qualify as an accredited investor and unlock access to exclusive investment opportunities not available to the general public.",
     imageUrl:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    href: "#",
     date: "February 15, 2024",
     category: "Education",
   },
   {
-    id: 6,
-    title: "Tax-Efficient Withdrawal Strategies",
+    id: 2,
+    title: "The Power of Real Assets",
     description:
-      "The order in which you withdraw from different accounts can significantly impact your tax burden. Discover strategies to maximize after-tax income.",
+      "Explore how real estate, farmland, and infrastructure investments can provide stable income and inflation protection for your retirement portfolio.",
     imageUrl:
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    href: "#",
-    date: "February 8, 2024",
-    category: "Tax Planning",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    date: "March 1, 2024",
+    category: "Alternative Investments",
+  },
+  {
+    id: 3,
+    title: "Modern Retirement Income Planning",
+    description:
+      "Learn how to structure your retirement income to last as long as you do, using strategies that adapt to changing economic conditions.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    date: "February 22, 2024",
+    category: "Retirement Planning",
   },
 ];
+
+// Normalize strings for comparison (lowercase, remove special chars)
+function normalizeString(str: string): string {
+  return str.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+// Match article title to download file
+function matchFileToArticle(title: string, file: DownloadFile): boolean {
+  const normalizedTitle = normalizeString(title);
+  const normalizedFileName = normalizeString(file.displayName);
+  
+  // Check if titles match (exact or contains)
+  // normalizeString handles "60/40" → "6040" and "Don't" → "Dont" automatically
+  return (
+    normalizedTitle === normalizedFileName ||
+    normalizedFileName.includes(normalizedTitle) ||
+    normalizedTitle.includes(normalizedFileName)
+  );
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -82,7 +66,11 @@ const containerVariants = {
   },
 };
 
-export default function ArticlesSection() {
+interface ArticlesSectionProps {
+  downloadFiles?: DownloadFile[];
+}
+
+export default function ArticlesSection({ downloadFiles = [] }: ArticlesSectionProps) {
   return (
     <div className="bg-surface py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -109,17 +97,37 @@ export default function ArticlesSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {articles.map((article) => (
-            <ArticleCard
-              key={article.id}
-              title={article.title}
-              description={article.description}
-              imageUrl={article.imageUrl}
-              href={article.href}
-              date={article.date}
-              category={article.category}
-            />
-          ))}
+          {articles.map((article) => {
+            // Find matching download file
+            const matchingFile = downloadFiles.find((file) =>
+              matchFileToArticle(article.title, file)
+            );
+
+            const fileType = matchingFile
+              ? (matchingFile.extension === "pdf" ? "pdf" : "docx")
+              : undefined;
+
+            // Set view-only for PDF (Accredited Investor Checklist)
+            // Set download-only for DOCX files (The Power of Real Assets, Modern Retirement Income Planning)
+            const isViewOnly = matchingFile?.extension === "pdf";
+            const isDownloadOnly = matchingFile?.extension === "docx";
+
+            return (
+              <ArticleCard
+                key={article.id}
+                title={article.title}
+                description={article.description}
+                imageUrl={article.imageUrl}
+                date={article.date}
+                category={article.category}
+                downloadable={!!matchingFile}
+                downloadUrl={matchingFile?.path}
+                fileType={fileType}
+                viewOnly={isViewOnly}
+                downloadOnly={isDownloadOnly}
+              />
+            );
+          })}
         </motion.div>
       </div>
     </div>
