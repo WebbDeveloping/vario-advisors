@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DocumentArrowDownIcon } from "@heroicons/react/24/outline";
+import VarioIcon from "@/components/ui/VarioIcon";
 
 interface GuideCardProps {
   title: string;
@@ -34,7 +34,7 @@ export default function GuideCard({
           whileHover={{ scale: 1.1, rotate: 5 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <DocumentArrowDownIcon className="h-6 w-6 text-white sm:h-7 sm:w-7" />
+          <VarioIcon name="cursor" size={28} className="h-6 w-6 sm:h-7 sm:w-7 brightness-0 invert" />
         </motion.div>
         <h3 className="text-lg font-semibold tracking-tight text-gray-900 sm:text-xl">
           {title}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import PdfViewerModal from "./PdfViewerModal";
-import { Download, Eye } from "lucide-react";
+import VarioIcon from "@/components/ui/VarioIcon";
 
 interface ArticleCardProps {
   title: string;
@@ -124,7 +124,7 @@ export default function ArticleCard({
                   variant="secondary"
                   className="bg-white/90 text-gray-900 hover:bg-white"
                 >
-                  <Eye className="mr-2 h-4 w-4" />
+                  <VarioIcon name="globe" size={16} className="mr-2 h-4 w-4" />
                   View
                 </Button>
               )}
@@ -136,7 +136,7 @@ export default function ArticleCard({
                   variant="secondary"
                   className="bg-white/90 text-gray-900 hover:bg-white"
                 >
-                  <Download className="mr-2 h-4 w-4" />
+                  <VarioIcon name="cursor" size={16} className="mr-2 h-4 w-4" />
                   Download
                 </Button>
               )}
