@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us - Vario Advisors",
+  description:
+    "Get started with a personalized retirement income strategy. Schedule a consultation to discover how we can help you build a retirement that doesn't depend on the stock market.",
+};
+
 export default function Contact() {
   return (
     <div className="relative bg-white">

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Vario Advisors - Retire With Confidence. Plan With Alternatives.",
   description:
     "We help retirees unlock a modern retirement strategy built on stability, real assets, and smarter diversification.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({

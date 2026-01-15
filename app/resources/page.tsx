@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import ResourcesHero from "@/components/resources/ResourcesHero";
 import GuidesSection from "@/components/resources/GuidesSection";
 import VideosSection from "@/components/resources/VideosSection";
 import ArticlesSection from "@/components/resources/ArticlesSection";
 import CTABanner from "@/components/ui/CTABanner";
 import { getDownloadFiles } from "@/lib/downloads";
+
+export const metadata: Metadata = {
+  title: "Resources - Vario Advisors",
+  description:
+    "Access educational guides, videos, and articles about retirement planning, alternative investments, and building a secure financial future.",
+};
 
 export default function Resources() {
   const downloadFiles = getDownloadFiles();
